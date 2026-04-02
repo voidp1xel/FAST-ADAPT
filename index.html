@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAST-ADAPT | Pilot Aptitude Screening Assessment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="top-bar">
+        <div id="test-info">FAST-ADAPT | Flight Training & Pilot Screening Assessment</div>
+        <div id="status-controls">
+            <div id="timer-box">Time: 01:30</div>
+            <button class="header-btn">Pause</button>
+            <button class="header-btn" onclick="location.reload()">Exit</button>
+        </div>
+    </div>
+
+    <div id="simulation-world">
+        <!-- Environmental Elements -->
+        <div class="sky">
+            <div class="cloud c1"></div>
+            <div class="cloud c2"></div>
+            <div class="cloud c3"></div>
+            <div class="cloud c4"></div>
+            <div class="floating-obj balloon">🎈</div>
+            <div class="floating-obj marker1">💬 $</div>
+        </div>
+        <div class="ground"></div>
+
+        <!-- Cockpit Interface -->
+        <div id="instrument-cluster">
+            <!-- Left: Steering -->
+            <div class="instrument-box panel-l">
+                <div class="bezel">
+                    <div class="screw tl"></div><div class="screw tr"></div>
+                    <div class="screw bl"></div><div class="screw br"></div>
+                    <div class="task-title">STEERING CONTROL</div>
+                    <canvas id="tracker-canvas" width="440" height="280"></canvas>
+                </div>
+            </div>
+
+            <!-- Middle: Alerts/Systems -->
+            <div class="instrument-box panel-m">
+                <div class="bezel">
+                    <div class="screw tl"></div><div class="screw tr"></div>
+                    <div class="screw bl"></div><div class="screw br"></div>
+                    <div class="task-title">ALERTS</div>
+                    <div id="alert-system">
+                        <button class="adapt-btn green" id="btn-aircraft">AIRCRAFT</button>
+                        <button class="adapt-btn red" id="btn-waypoint">WAYPOINT</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Cognitive/Data -->
+            <div class="instrument-box panel-r">
+                <div class="bezel">
+                    <div class="screw tl"></div><div class="screw tr"></div>
+                    <div class="screw bl"></div><div class="screw br"></div>
+                    <div class="task-title">DATA ANALYSIS</div>
+                    <div id="cog-interface">
+                        <div id="cog-display">SYSTEM IDLE</div>
+                        <div id="cog-options" class="hidden">
+                            <button class="cog-btn" id="cog-opt-1"></button>
+                            <button class="cog-btn" id="cog-opt-2"></button>
+                            <button class="cog-btn" id="cog-opt-3"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-controls-box">
+        <div id="mode-select">
+            <button id="start-normal-btn" class="mode-btn normal-mode-btn">START NORMAL MODE</button>
+            <button id="start-real-btn" class="mode-btn real-mode-btn">START ADVANCED MODE</button>
+        </div>
+        <button id="start-btn" class="hidden">INITIATE TEST</button>
+    </div>
+
+    <div id="end-screen" class="hidden">
+        <div id="report-container"></div>
+        <button id="final-restart-btn" onclick="location.reload()">RESTART SIMULATION</button>
+    </div>
+
+    <script src="tracker.js"></script>
+    <script src="alerts.js"></script>
+    <script src="cognitive.js"></script>
+    <script src="visualTask.js"></script>
+    <script src="realFast.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
