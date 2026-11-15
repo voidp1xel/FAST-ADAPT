@@ -98,7 +98,7 @@ Because FAST-ADAPT is engineered with zero external runtime dependencies, it run
 ```bash
 # 1. Clone the repository
 git clone https://github.com/voidp1xel/FAST-ADAPT.git
-cd FAST
+cd FAST-ADAPT
 
 # 2. Open directly in a browser or serve locally
 open index.html
